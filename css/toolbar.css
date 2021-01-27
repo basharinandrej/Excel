@@ -1,0 +1,22 @@
+
+.excel__toolbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 34px;
+  height: 40px;
+  border-top: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+  padding: 7px 10px;
+  display: flex;
+}
+.excel__toolbar .button {
+  height: 24px;
+  min-width: 24px;
+  padding: 3px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  color: rgba(0, 0, 0, .7);
+}
+
