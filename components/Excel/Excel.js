@@ -15,10 +15,12 @@ export class Excel extends ExcelComponent {
         this.components = this.components.map( Component => {
             let $el = $.create('div', Component.className)
             let component = new Component($el)
-            //DEBBUG
+
+            // DEBBUG START
             if(component.nameComponent) {
                 window['c' + component.nameComponent] = component
-            } 
+            }
+            // DEBBUG END
 
             $el.html(component.toHTML())
             $root.appendMy($el)
