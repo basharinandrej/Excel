@@ -5,7 +5,7 @@ import {createTable} from "./table.template.js";
 export class Table extends ExcelComponent{
     static className = 'excel__table'
 
-    toHTML() { return createTable(20) }
+    toHTML() { return createTable(15) }
 }
 /* <div class="row">
 

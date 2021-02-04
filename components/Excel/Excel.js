@@ -17,8 +17,9 @@ export class Excel extends ExcelComponent {
             let component = new Component($el)
 
             // DEBBUG START
-            if(component.nameComponent) {
-                window['c' + component.nameComponent] = component
+            console.log(component.name);
+            if(component.name) {
+                window['c' + component.name] = component
             }
             // DEBBUG END
 
@@ -33,7 +34,7 @@ export class Excel extends ExcelComponent {
         // this.$el - #app
         this.$el.appendMy(this.getRoot())
         this.components.forEach(component => {
-            component.initDOMListeners()
+            component.init()
         })
     }
 }

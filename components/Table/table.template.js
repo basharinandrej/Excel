@@ -1,45 +1,46 @@
-const CHARCODE = {
-    'A': 65,
-    'Z': 90
+const C0DES = {
+    A: 65,
+    Z: 90
 }
 
-function createRow( content ) {
+function createCol(el) {
     return `
-        <div class="row">
-            <div class="row-info"></div>
-            <div class="row-data"> ${content} </div>
-        </div>
+        <div class="column">
+        ${el}
+      </div>
     `
 }
 
-function toCol( content ) {
-    return `<div class="column">${content}</div>`
+function createRow(content) {
+    return `
+    <div class="row">
+        <div class="row-info"></div>
+        <div class="row-data">${content}</div>
+    </div>
+    `
 }
 
-export function createTable(row) {
-    const cntCol = CHARCODE.Z - CHARCODE.A + 1
-    let rows = new Array(row).fill('')
-
-    let columns = new Array(cntCol).fill('')
-        .map((_, idx) => {
-            return CHARCODE.A + idx
-        })
-        .map(ch => {
-            return String.fromCharCode(ch)
-        }).map(ch => {
-            return toCol(ch)
-        }).join(' ')
-
-    rows = rows.map((_, idx) => {
-        return createRow()
-    })
-
-    rows.unshift(createRow(columns))
-
-    return rows.join(' ')
+function charAd(_, idx) {
+    return String.fromCharCode(C0DES.A + idx)
 }
 
+export function createTable(rowsCount) {
+    const colCount = C0DES.Z - C0DES.A + 1
 
+    const cols = new Array(colCount)
+        .fill('')
+        .map(charAd)
+        .map(createCol)
+        .join('')
+
+    const rows = []
+    rows.push(createRow(cols))
+
+    for(let i = 0; i < rowsCount; i++) {
+        rows.push(createRow())
+    }
+    return rows.join('')
+}
 
 
 

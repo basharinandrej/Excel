@@ -4,16 +4,17 @@ export class DomListener{
     constructor($root, option = {}) {
         this.$root = $root
         this.listeners = option.listeners || []
-        this.nameComponent = option.name
+        this.name = option.name
     }
 
     initDOMListeners() {
         this.listeners.forEach( listener => {
             let method = getMethodName(listener)
             if( !this[method] ) {
-                throw Error(`Method ${method} is not implemented ${this.nameComponent} component`)
+                throw Error(`Method ${method} is not implemented ${this.name} component`)
             }
-            this[method] = this[method].bind(this)
+
+            this[method] = this[method]
             this.$root.on(listener, this[method])
         })
     }

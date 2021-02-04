@@ -1,4 +1,4 @@
-class DOM {
+  class DOM {
     constructor(selector) {
         this.$el = typeof selector === 'string'
             ? document.getElementById(selector)
