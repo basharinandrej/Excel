@@ -38,6 +38,18 @@
         return this
     }
 
+    closest(parent) {
+        return $(this.$el.closest(parent))
+    }
+
+    getCoords() {
+        return this.$el.getBoundingClientRect()
+    }
+
+    get data() {
+        return this.$el.dataset
+    }
+
 }
 
 export function $(selector) {

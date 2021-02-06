@@ -38,6 +38,7 @@
     width: 120px;
     border: 1px solid #c0c0c0;
     border-top: 0;
+    position: relative;
     border-left: 0;
     height: 100%;
 }
@@ -61,5 +62,17 @@
     z-index: 2;
 }
 
+.column__resizer {
+    position: absolute;
+    background-color: #3c74ff;
+    cursor: col-resize;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    right: 0;
+    opacity: 0;
+}
 
-
+.column__resizer:hover {
+    opacity: 1;
+}

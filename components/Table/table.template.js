@@ -3,10 +3,17 @@ const C0DES = {
     Z: 90
 }
 
-function createCol(el) {
+function toCell(_, idx) { 
+    return `              
+    <div class="cell" data-col=${idx} contenteditable></div>
+    `
+}
+
+function createCol(el, idx) {
     return `
-        <div class="column">
+        <div class="column" data-col=${idx} data-type="resizeble">
         ${el}
+        <div class="column__resizer" data-type="resizer"></div>
       </div>
     `
 }
@@ -26,6 +33,7 @@ function charAd(_, idx) {
 
 export function createTable(rowsCount) {
     const colCount = C0DES.Z - C0DES.A + 1
+    const rows = []
 
     const cols = new Array(colCount)
         .fill('')
@@ -33,11 +41,15 @@ export function createTable(rowsCount) {
         .map(createCol)
         .join('')
 
-    const rows = []
     rows.push(createRow(cols))
 
     for(let i = 0; i < rowsCount; i++) {
-        rows.push(createRow())
+        let cell = new Array(rowsCount)
+            .fill('')
+            .map(toCell)
+            .join('')
+
+        rows.push(createRow(cell))
     }
     return rows.join('')
 }

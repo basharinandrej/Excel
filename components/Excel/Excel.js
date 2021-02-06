@@ -17,10 +17,9 @@ export class Excel extends ExcelComponent {
             let component = new Component($el)
 
             // DEBBUG START
-            console.log(component.name);
-            if(component.name) {
-                window['c' + component.name] = component
-            }
+            // if(component.name) {
+            //     window['c' + component.name] = component
+            // }
             // DEBBUG END
 
             $el.html(component.toHTML())
