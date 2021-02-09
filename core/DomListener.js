@@ -13,8 +13,7 @@ export class DomListener{
             if( !this[method] ) {
                 throw Error(`Method ${method} is not implemented ${this.name} component`)
             }
-
-            this[method] = this[method]
+            this[method] = this[method].bind(this)
             this.$root.on(listener, this[method])
         })
     }

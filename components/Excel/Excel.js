@@ -14,7 +14,7 @@ export class Excel extends ExcelComponent {
         // Массив интстансев   //this.components - ссылки на классы
         this.components = this.components.map( Component => {
             let $el = $.create('div', Component.className)
-            let component = new Component($el)
+           let component = new Component($el)
 
             // DEBBUG START
             // if(component.name) {

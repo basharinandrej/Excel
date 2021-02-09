@@ -23,6 +23,7 @@
     border: 1px solid #c0c0c0;
     background: #f8f9fa;
     border-top: none;
+    position: relative;
 }
 
 .excel__table .row-data {
@@ -71,8 +72,25 @@
     width: 4px;
     right: 0;
     opacity: 0;
+    z-index: 1000;
 }
 
 .column__resizer:hover {
-    opacity: 1;
+    opacity: 1 !important;
+}
+
+.row__resizer {
+    position: absolute;
+    background-color: #3c74ff;
+    cursor: row-resize;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    opacity: 0;
+    z-index: 1000;
+}
+
+.row__resizer:hover {
+    opacity: 1 !important;
 }

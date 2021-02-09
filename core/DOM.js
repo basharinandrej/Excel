@@ -50,7 +50,31 @@
         return this.$el.dataset
     }
 
+    findAll(selector) {
+        return this.$el.querySelectorAll(selector)
+    }
+
+    find(selector) {
+        return $(this.$el.querySelector(selector))
+    }
+
+    addClass(selector) {
+        return this.$el.classList.add(selector)
+    }
+
+    
+    removeClass(selector) {
+        return this.$el.classList.remove(selector)
+    }
+
+    css(styles = {}) {
+        Object.keys(styles)
+            .forEach(property => {
+                return this.$el.style[property] = styles[property]
+            })
+    }
 }
+
 
 export function $(selector) {
     return new DOM(selector)

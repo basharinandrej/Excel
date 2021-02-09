@@ -3,27 +3,38 @@ const C0DES = {
     Z: 90
 }
 
-function toCell(_, idx) { 
-    return `              
-    <div class="cell" data-col=${idx} contenteditable></div>
-    `
+function toCell(row) {  
+    // переменная row хранться тут, и доступна для следующей функции по замыканию   
+    return function(_, idx) {
+        return `<div class="cell" 
+            data-col=${idx} 
+            data-id="${row} : ${idx}" 
+            data-type="cell"
+            contenteditable>
+        </div>`
+    }
 }
 
 function createCol(el, idx) {
     return `
         <div class="column" data-col=${idx} data-type="resizeble">
         ${el}
-        <div class="column__resizer" data-type="resizer"></div>
+        <div class="column__resizer" data-resize="col"></div>
       </div>
     `
 }
 
-function createRow(content) {
+function createRow(content, idx) {
     return `
-    <div class="row">
-        <div class="row-info"></div>
-        <div class="row-data">${content}</div>
-    </div>
+        <div class="row" data-type="resizeble">
+            <div class="row-info">
+                ${idx ? idx : ''}
+                <div class="row__resizer" data-resize="row"></div>
+            </div>
+            <div class="row-data">
+                ${content}
+            </div>
+        </div>
     `
 }
 
@@ -43,13 +54,13 @@ export function createTable(rowsCount) {
 
     rows.push(createRow(cols))
 
-    for(let i = 0; i < rowsCount; i++) {
+    for(let row = 0; row < rowsCount; row++) {
         let cell = new Array(rowsCount)
             .fill('')
-            .map(toCell)
+            .map(toCell(row))
             .join('')
 
-        rows.push(createRow(cell))
+        rows.push(createRow(cell, row + 1))
     }
     return rows.join('')
 }
