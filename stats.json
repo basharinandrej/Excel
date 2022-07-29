@@ -1,0 +1,1333 @@
+{
+    "hash": "e84bd67ce5b7d0d430b7",
+    "version": "5.74.0",
+    "time": 116,
+    "builtAt": 1659115800142,
+    "publicPath": "auto",
+    "outputPath": "/home/andrej/projects/Excel/build",
+    "assetsByChunkName": {
+        "main": [
+            "bundle.e84bd67ce5b7d0d430b7.js"
+        ]
+    },
+    "assets": [
+        {
+            "type": "asset",
+            "name": "bundle.e84bd67ce5b7d0d430b7.js",
+            "size": 4463,
+            "emitted": false,
+            "comparedForEmit": false,
+            "cached": true,
+            "info": {
+                "immutable": true,
+                "fullhash": "e84bd67ce5b7d0d430b7",
+                "javascriptModule": false,
+                "size": 4463
+            },
+            "chunkNames": [
+                "main"
+            ],
+            "chunkIdHints": [],
+            "auxiliaryChunkNames": [],
+            "auxiliaryChunkIdHints": [],
+            "related": {},
+            "chunks": [
+                "main"
+            ],
+            "auxiliaryChunks": [],
+            "isOverSizeLimit": false
+        },
+        {
+            "type": "asset",
+            "name": "index.html",
+            "size": 343,
+            "emitted": false,
+            "comparedForEmit": true,
+            "cached": false,
+            "info": {
+                "size": 343
+            },
+            "chunkNames": [],
+            "chunkIdHints": [],
+            "auxiliaryChunkNames": [],
+            "auxiliaryChunkIdHints": [],
+            "related": {},
+            "chunks": [],
+            "auxiliaryChunks": [],
+            "isOverSizeLimit": false
+        }
+    ],
+    "chunks": [
+        {
+            "rendered": true,
+            "initial": true,
+            "entry": true,
+            "recorded": false,
+            "size": 1004,
+            "sizes": {
+                "javascript": 67,
+                "runtime": 937
+            },
+            "names": [
+                "main"
+            ],
+            "idHints": [],
+            "runtime": [
+                "main"
+            ],
+            "files": [
+                "bundle.e84bd67ce5b7d0d430b7.js"
+            ],
+            "auxiliaryFiles": [],
+            "hash": "17ab1726305c75ec8e84",
+            "childrenByOrder": {},
+            "id": "main",
+            "siblings": [],
+            "parents": [],
+            "children": [],
+            "modules": [
+                {
+                    "type": "module",
+                    "moduleType": "javascript/auto",
+                    "layer": null,
+                    "size": 46,
+                    "sizes": {
+                        "javascript": 46
+                    },
+                    "built": true,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "/home/andrej/projects/Excel/src/index.js",
+                    "name": "./src/index.js",
+                    "nameForCondition": "/home/andrej/projects/Excel/src/index.js",
+                    "index": 0,
+                    "preOrderIndex": 0,
+                    "index2": 1,
+                    "postOrderIndex": 1,
+                    "cacheable": true,
+                    "optional": false,
+                    "orphan": false,
+                    "dependent": false,
+                    "issuer": null,
+                    "issuerName": null,
+                    "issuerPath": null,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "./src/index.js",
+                    "issuerId": null,
+                    "chunks": [
+                        "main"
+                    ],
+                    "assets": [],
+                    "reasons": [
+                        {
+                            "moduleIdentifier": null,
+                            "module": null,
+                            "moduleName": null,
+                            "resolvedModuleIdentifier": null,
+                            "resolvedModule": null,
+                            "type": "entry",
+                            "active": true,
+                            "explanation": "",
+                            "userRequest": "./src/index.js",
+                            "loc": "main",
+                            "moduleId": null,
+                            "resolvedModuleId": null
+                        }
+                    ],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": 0
+                },
+                {
+                    "type": "module",
+                    "moduleType": "javascript/auto",
+                    "layer": null,
+                    "size": 21,
+                    "sizes": {
+                        "javascript": 21
+                    },
+                    "built": true,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "/home/andrej/projects/Excel/src/test.js",
+                    "name": "./src/test.js",
+                    "nameForCondition": "/home/andrej/projects/Excel/src/test.js",
+                    "index": 1,
+                    "preOrderIndex": 1,
+                    "index2": 0,
+                    "postOrderIndex": 0,
+                    "cacheable": true,
+                    "optional": false,
+                    "orphan": false,
+                    "dependent": true,
+                    "issuer": "/home/andrej/projects/Excel/src/index.js",
+                    "issuerName": "./src/index.js",
+                    "issuerPath": [
+                        {
+                            "identifier": "/home/andrej/projects/Excel/src/index.js",
+                            "name": "./src/index.js",
+                            "id": "./src/index.js"
+                        }
+                    ],
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "./src/test.js",
+                    "issuerId": "./src/index.js",
+                    "chunks": [
+                        "main"
+                    ],
+                    "assets": [],
+                    "reasons": [
+                        {
+                            "moduleIdentifier": "/home/andrej/projects/Excel/src/index.js",
+                            "module": "./src/index.js",
+                            "moduleName": "./src/index.js",
+                            "resolvedModuleIdentifier": "/home/andrej/projects/Excel/src/index.js",
+                            "resolvedModule": "./src/index.js",
+                            "type": "harmony side effect evaluation",
+                            "active": true,
+                            "explanation": "",
+                            "userRequest": "./test.js",
+                            "loc": "1:0-19",
+                            "moduleId": "./src/index.js",
+                            "resolvedModuleId": "./src/index.js"
+                        }
+                    ],
+                    "usedExports": null,
+                    "providedExports": null,
+                    "optimizationBailout": [],
+                    "depth": 1
+                },
+                {
+                    "type": "module",
+                    "moduleType": "runtime",
+                    "layer": null,
+                    "size": 267,
+                    "sizes": {
+                        "runtime": 267
+                    },
+                    "built": false,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "webpack/runtime/compat get default export",
+                    "name": "webpack/runtime/compat get default export",
+                    "nameForCondition": null,
+                    "index": null,
+                    "preOrderIndex": null,
+                    "index2": null,
+                    "postOrderIndex": null,
+                    "optional": false,
+                    "orphan": false,
+                    "dependent": false,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "",
+                    "chunks": [
+                        "main"
+                    ],
+                    "assets": [],
+                    "reasons": [],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": null
+                },
+                {
+                    "type": "module",
+                    "moduleType": "runtime",
+                    "layer": null,
+                    "size": 308,
+                    "sizes": {
+                        "runtime": 308
+                    },
+                    "built": false,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "webpack/runtime/define property getters",
+                    "name": "webpack/runtime/define property getters",
+                    "nameForCondition": null,
+                    "index": null,
+                    "preOrderIndex": null,
+                    "index2": null,
+                    "postOrderIndex": null,
+                    "optional": false,
+                    "orphan": false,
+                    "dependent": false,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "",
+                    "chunks": [
+                        "main"
+                    ],
+                    "assets": [],
+                    "reasons": [],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": null
+                },
+                {
+                    "type": "module",
+                    "moduleType": "runtime",
+                    "layer": null,
+                    "size": 88,
+                    "sizes": {
+                        "runtime": 88
+                    },
+                    "built": false,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "webpack/runtime/hasOwnProperty shorthand",
+                    "name": "webpack/runtime/hasOwnProperty shorthand",
+                    "nameForCondition": null,
+                    "index": null,
+                    "preOrderIndex": null,
+                    "index2": null,
+                    "postOrderIndex": null,
+                    "optional": false,
+                    "orphan": false,
+                    "dependent": false,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "",
+                    "chunks": [
+                        "main"
+                    ],
+                    "assets": [],
+                    "reasons": [],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": null
+                },
+                {
+                    "type": "module",
+                    "moduleType": "runtime",
+                    "layer": null,
+                    "size": 274,
+                    "sizes": {
+                        "runtime": 274
+                    },
+                    "built": false,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "webpack/runtime/make namespace object",
+                    "name": "webpack/runtime/make namespace object",
+                    "nameForCondition": null,
+                    "index": null,
+                    "preOrderIndex": null,
+                    "index2": null,
+                    "postOrderIndex": null,
+                    "optional": false,
+                    "orphan": false,
+                    "dependent": false,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "",
+                    "chunks": [
+                        "main"
+                    ],
+                    "assets": [],
+                    "reasons": [],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": null
+                }
+            ],
+            "origins": [
+                {
+                    "module": "",
+                    "moduleIdentifier": "",
+                    "moduleName": "",
+                    "loc": "main",
+                    "request": "./src/index.js"
+                }
+            ]
+        }
+    ],
+    "modules": [
+        {
+            "type": "module",
+            "moduleType": "javascript/auto",
+            "layer": null,
+            "size": 46,
+            "sizes": {
+                "javascript": 46
+            },
+            "built": true,
+            "codeGenerated": true,
+            "buildTimeExecuted": false,
+            "cached": false,
+            "identifier": "/home/andrej/projects/Excel/src/index.js",
+            "name": "./src/index.js",
+            "nameForCondition": "/home/andrej/projects/Excel/src/index.js",
+            "index": 0,
+            "preOrderIndex": 0,
+            "index2": 1,
+            "postOrderIndex": 1,
+            "cacheable": true,
+            "optional": false,
+            "orphan": false,
+            "issuer": null,
+            "issuerName": null,
+            "issuerPath": null,
+            "failed": false,
+            "errors": 0,
+            "warnings": 0,
+            "id": "./src/index.js",
+            "issuerId": null,
+            "chunks": [
+                "main"
+            ],
+            "assets": [],
+            "reasons": [
+                {
+                    "moduleIdentifier": null,
+                    "module": null,
+                    "moduleName": null,
+                    "resolvedModuleIdentifier": null,
+                    "resolvedModule": null,
+                    "type": "entry",
+                    "active": true,
+                    "explanation": "",
+                    "userRequest": "./src/index.js",
+                    "loc": "main",
+                    "moduleId": null,
+                    "resolvedModuleId": null
+                }
+            ],
+            "usedExports": null,
+            "providedExports": [],
+            "optimizationBailout": [],
+            "depth": 0
+        },
+        {
+            "type": "module",
+            "moduleType": "javascript/auto",
+            "layer": null,
+            "size": 21,
+            "sizes": {
+                "javascript": 21
+            },
+            "built": true,
+            "codeGenerated": true,
+            "buildTimeExecuted": false,
+            "cached": false,
+            "identifier": "/home/andrej/projects/Excel/src/test.js",
+            "name": "./src/test.js",
+            "nameForCondition": "/home/andrej/projects/Excel/src/test.js",
+            "index": 1,
+            "preOrderIndex": 1,
+            "index2": 0,
+            "postOrderIndex": 0,
+            "cacheable": true,
+            "optional": false,
+            "orphan": false,
+            "issuer": "/home/andrej/projects/Excel/src/index.js",
+            "issuerName": "./src/index.js",
+            "issuerPath": [
+                {
+                    "identifier": "/home/andrej/projects/Excel/src/index.js",
+                    "name": "./src/index.js",
+                    "id": "./src/index.js"
+                }
+            ],
+            "failed": false,
+            "errors": 0,
+            "warnings": 0,
+            "id": "./src/test.js",
+            "issuerId": "./src/index.js",
+            "chunks": [
+                "main"
+            ],
+            "assets": [],
+            "reasons": [
+                {
+                    "moduleIdentifier": "/home/andrej/projects/Excel/src/index.js",
+                    "module": "./src/index.js",
+                    "moduleName": "./src/index.js",
+                    "resolvedModuleIdentifier": "/home/andrej/projects/Excel/src/index.js",
+                    "resolvedModule": "./src/index.js",
+                    "type": "harmony side effect evaluation",
+                    "active": true,
+                    "explanation": "",
+                    "userRequest": "./test.js",
+                    "loc": "1:0-19",
+                    "moduleId": "./src/index.js",
+                    "resolvedModuleId": "./src/index.js"
+                }
+            ],
+            "usedExports": null,
+            "providedExports": null,
+            "optimizationBailout": [],
+            "depth": 1
+        },
+        {
+            "type": "module",
+            "moduleType": "runtime",
+            "layer": null,
+            "size": 267,
+            "sizes": {
+                "runtime": 267
+            },
+            "built": false,
+            "codeGenerated": true,
+            "buildTimeExecuted": false,
+            "cached": false,
+            "identifier": "webpack/runtime/compat get default export",
+            "name": "webpack/runtime/compat get default export",
+            "nameForCondition": null,
+            "index": null,
+            "preOrderIndex": null,
+            "index2": null,
+            "postOrderIndex": null,
+            "optional": false,
+            "orphan": false,
+            "failed": false,
+            "errors": 0,
+            "warnings": 0,
+            "id": "",
+            "chunks": [
+                "main"
+            ],
+            "assets": [],
+            "reasons": [],
+            "usedExports": null,
+            "providedExports": [],
+            "optimizationBailout": [],
+            "depth": null
+        },
+        {
+            "type": "module",
+            "moduleType": "runtime",
+            "layer": null,
+            "size": 308,
+            "sizes": {
+                "runtime": 308
+            },
+            "built": false,
+            "codeGenerated": true,
+            "buildTimeExecuted": false,
+            "cached": false,
+            "identifier": "webpack/runtime/define property getters",
+            "name": "webpack/runtime/define property getters",
+            "nameForCondition": null,
+            "index": null,
+            "preOrderIndex": null,
+            "index2": null,
+            "postOrderIndex": null,
+            "optional": false,
+            "orphan": false,
+            "failed": false,
+            "errors": 0,
+            "warnings": 0,
+            "id": "",
+            "chunks": [
+                "main"
+            ],
+            "assets": [],
+            "reasons": [],
+            "usedExports": null,
+            "providedExports": [],
+            "optimizationBailout": [],
+            "depth": null
+        },
+        {
+            "type": "module",
+            "moduleType": "runtime",
+            "layer": null,
+            "size": 88,
+            "sizes": {
+                "runtime": 88
+            },
+            "built": false,
+            "codeGenerated": true,
+            "buildTimeExecuted": false,
+            "cached": false,
+            "identifier": "webpack/runtime/hasOwnProperty shorthand",
+            "name": "webpack/runtime/hasOwnProperty shorthand",
+            "nameForCondition": null,
+            "index": null,
+            "preOrderIndex": null,
+            "index2": null,
+            "postOrderIndex": null,
+            "optional": false,
+            "orphan": false,
+            "failed": false,
+            "errors": 0,
+            "warnings": 0,
+            "id": "",
+            "chunks": [
+                "main"
+            ],
+            "assets": [],
+            "reasons": [],
+            "usedExports": null,
+            "providedExports": [],
+            "optimizationBailout": [],
+            "depth": null
+        },
+        {
+            "type": "module",
+            "moduleType": "runtime",
+            "layer": null,
+            "size": 274,
+            "sizes": {
+                "runtime": 274
+            },
+            "built": false,
+            "codeGenerated": true,
+            "buildTimeExecuted": false,
+            "cached": false,
+            "identifier": "webpack/runtime/make namespace object",
+            "name": "webpack/runtime/make namespace object",
+            "nameForCondition": null,
+            "index": null,
+            "preOrderIndex": null,
+            "index2": null,
+            "postOrderIndex": null,
+            "optional": false,
+            "orphan": false,
+            "failed": false,
+            "errors": 0,
+            "warnings": 0,
+            "id": "",
+            "chunks": [
+                "main"
+            ],
+            "assets": [],
+            "reasons": [],
+            "usedExports": null,
+            "providedExports": [],
+            "optimizationBailout": [],
+            "depth": null
+        }
+    ],
+    "entrypoints": {
+        "main": {
+            "name": "main",
+            "chunks": [
+                "main"
+            ],
+            "assets": [
+                {
+                    "name": "bundle.e84bd67ce5b7d0d430b7.js",
+                    "size": 4463
+                }
+            ],
+            "filteredAssets": 0,
+            "assetsSize": 4463,
+            "auxiliaryAssets": [],
+            "filteredAuxiliaryAssets": 0,
+            "auxiliaryAssetsSize": 0,
+            "children": {},
+            "childAssets": {},
+            "isOverSizeLimit": false
+        }
+    },
+    "namedChunkGroups": {
+        "main": {
+            "name": "main",
+            "chunks": [
+                "main"
+            ],
+            "assets": [
+                {
+                    "name": "bundle.e84bd67ce5b7d0d430b7.js",
+                    "size": 4463
+                }
+            ],
+            "filteredAssets": 0,
+            "assetsSize": 4463,
+            "auxiliaryAssets": [],
+            "filteredAuxiliaryAssets": 0,
+            "auxiliaryAssetsSize": 0,
+            "children": {},
+            "childAssets": {},
+            "isOverSizeLimit": false
+        }
+    },
+    "errors": [],
+    "errorsCount": 0,
+    "warnings": [],
+    "warningsCount": 0,
+    "children": [
+        {
+            "name": "HtmlWebpackCompiler",
+            "hash": "ee871b21289cbd30b4c7",
+            "version": "5.74.0",
+            "time": 74,
+            "builtAt": 1659115800120,
+            "publicPath": "",
+            "outputPath": "/home/andrej/projects/Excel/build",
+            "assetsByChunkName": {},
+            "assets": [],
+            "chunks": [
+                {
+                    "rendered": true,
+                    "initial": true,
+                    "entry": true,
+                    "recorded": false,
+                    "size": 1340,
+                    "sizes": {
+                        "javascript": 606,
+                        "runtime": 734
+                    },
+                    "names": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "idHints": [],
+                    "runtime": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "files": [],
+                    "auxiliaryFiles": [],
+                    "hash": "14b245d49347ac29ebe3",
+                    "childrenByOrder": {},
+                    "id": "HtmlWebpackPlugin_0-0",
+                    "siblings": [],
+                    "parents": [],
+                    "children": [],
+                    "modules": [
+                        {
+                            "type": "module",
+                            "moduleType": "javascript/auto",
+                            "layer": null,
+                            "size": 529,
+                            "sizes": {
+                                "javascript": 529
+                            },
+                            "built": true,
+                            "codeGenerated": true,
+                            "buildTimeExecuted": false,
+                            "cached": false,
+                            "identifier": "/home/andrej/projects/Excel/node_modules/html-webpack-plugin/lib/loader.js!/home/andrej/projects/Excel/src/index.html",
+                            "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                            "nameForCondition": "/home/andrej/projects/Excel/src/index.html",
+                            "index": 1,
+                            "preOrderIndex": 1,
+                            "index2": 1,
+                            "postOrderIndex": 1,
+                            "cacheable": true,
+                            "optional": false,
+                            "orphan": false,
+                            "dependent": false,
+                            "issuer": null,
+                            "issuerName": null,
+                            "issuerPath": null,
+                            "failed": false,
+                            "errors": 0,
+                            "warnings": 0,
+                            "id": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                            "issuerId": null,
+                            "chunks": [
+                                "HtmlWebpackPlugin_0-0"
+                            ],
+                            "assets": [],
+                            "reasons": [
+                                {
+                                    "moduleIdentifier": "/home/andrej/projects/Excel/node_modules/html-webpack-plugin/lib/loader.js!/home/andrej/projects/Excel/src/index.html",
+                                    "module": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                                    "moduleName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                                    "resolvedModuleIdentifier": "/home/andrej/projects/Excel/node_modules/html-webpack-plugin/lib/loader.js!/home/andrej/projects/Excel/src/index.html",
+                                    "resolvedModule": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                                    "type": "cjs self exports reference",
+                                    "active": true,
+                                    "explanation": "",
+                                    "userRequest": null,
+                                    "loc": "1:93-107",
+                                    "moduleId": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                                    "resolvedModuleId": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html"
+                                },
+                                {
+                                    "moduleIdentifier": null,
+                                    "module": null,
+                                    "moduleName": null,
+                                    "resolvedModuleIdentifier": null,
+                                    "resolvedModule": null,
+                                    "type": "entry",
+                                    "active": true,
+                                    "explanation": "",
+                                    "userRequest": "/home/andrej/projects/Excel/node_modules/html-webpack-plugin/lib/loader.js!/home/andrej/projects/Excel/src/index.html",
+                                    "loc": "HtmlWebpackPlugin_0-0",
+                                    "moduleId": null,
+                                    "resolvedModuleId": null
+                                },
+                                {
+                                    "moduleIdentifier": null,
+                                    "module": null,
+                                    "moduleName": null,
+                                    "resolvedModuleIdentifier": null,
+                                    "resolvedModule": null,
+                                    "type": null,
+                                    "active": true,
+                                    "explanation": "used as library export",
+                                    "userRequest": null,
+                                    "moduleId": null,
+                                    "resolvedModuleId": null
+                                }
+                            ],
+                            "usedExports": null,
+                            "providedExports": null,
+                            "optimizationBailout": [
+                                "CommonJS bailout: module.exports is used directly at 1:93-107"
+                            ],
+                            "depth": 0
+                        },
+                        {
+                            "type": "module",
+                            "moduleType": "javascript/esm",
+                            "layer": null,
+                            "size": 77,
+                            "sizes": {
+                                "javascript": 77
+                            },
+                            "built": true,
+                            "codeGenerated": true,
+                            "buildTimeExecuted": false,
+                            "cached": false,
+                            "identifier": "javascript/esm|data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                            "name": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                            "nameForCondition": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                            "index": 0,
+                            "preOrderIndex": 0,
+                            "index2": 0,
+                            "postOrderIndex": 0,
+                            "cacheable": true,
+                            "optional": false,
+                            "orphan": false,
+                            "dependent": false,
+                            "issuer": null,
+                            "issuerName": null,
+                            "issuerPath": null,
+                            "failed": false,
+                            "errors": 0,
+                            "warnings": 0,
+                            "id": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                            "issuerId": null,
+                            "chunks": [
+                                "HtmlWebpackPlugin_0-0"
+                            ],
+                            "assets": [],
+                            "reasons": [
+                                {
+                                    "moduleIdentifier": null,
+                                    "module": null,
+                                    "moduleName": null,
+                                    "resolvedModuleIdentifier": null,
+                                    "resolvedModule": null,
+                                    "type": "entry",
+                                    "active": true,
+                                    "explanation": "",
+                                    "userRequest": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                                    "loc": "HtmlWebpackPlugin_0-0",
+                                    "moduleId": null,
+                                    "resolvedModuleId": null
+                                }
+                            ],
+                            "usedExports": null,
+                            "providedExports": [],
+                            "optimizationBailout": [],
+                            "depth": 0
+                        },
+                        {
+                            "type": "module",
+                            "moduleType": "runtime",
+                            "layer": null,
+                            "size": 88,
+                            "sizes": {
+                                "runtime": 88
+                            },
+                            "built": false,
+                            "codeGenerated": true,
+                            "buildTimeExecuted": false,
+                            "cached": false,
+                            "identifier": "webpack/runtime/hasOwnProperty shorthand",
+                            "name": "webpack/runtime/hasOwnProperty shorthand",
+                            "nameForCondition": null,
+                            "index": null,
+                            "preOrderIndex": null,
+                            "index2": null,
+                            "postOrderIndex": null,
+                            "optional": false,
+                            "orphan": false,
+                            "dependent": false,
+                            "failed": false,
+                            "errors": 0,
+                            "warnings": 0,
+                            "id": "",
+                            "chunks": [
+                                "HtmlWebpackPlugin_0-0"
+                            ],
+                            "assets": [],
+                            "reasons": [],
+                            "usedExports": null,
+                            "providedExports": [],
+                            "optimizationBailout": [],
+                            "depth": null
+                        },
+                        {
+                            "type": "module",
+                            "moduleType": "runtime",
+                            "layer": null,
+                            "size": 274,
+                            "sizes": {
+                                "runtime": 274
+                            },
+                            "built": false,
+                            "codeGenerated": true,
+                            "buildTimeExecuted": false,
+                            "cached": false,
+                            "identifier": "webpack/runtime/make namespace object",
+                            "name": "webpack/runtime/make namespace object",
+                            "nameForCondition": null,
+                            "index": null,
+                            "preOrderIndex": null,
+                            "index2": null,
+                            "postOrderIndex": null,
+                            "optional": false,
+                            "orphan": false,
+                            "dependent": false,
+                            "failed": false,
+                            "errors": 0,
+                            "warnings": 0,
+                            "id": "",
+                            "chunks": [
+                                "HtmlWebpackPlugin_0-0"
+                            ],
+                            "assets": [],
+                            "reasons": [],
+                            "usedExports": null,
+                            "providedExports": [],
+                            "optimizationBailout": [],
+                            "depth": null
+                        },
+                        {
+                            "type": "module",
+                            "moduleType": "runtime",
+                            "layer": null,
+                            "size": 27,
+                            "sizes": {
+                                "runtime": 27
+                            },
+                            "built": false,
+                            "codeGenerated": true,
+                            "buildTimeExecuted": false,
+                            "cached": false,
+                            "identifier": "webpack/runtime/publicPath",
+                            "name": "webpack/runtime/publicPath",
+                            "nameForCondition": null,
+                            "index": null,
+                            "preOrderIndex": null,
+                            "index2": null,
+                            "postOrderIndex": null,
+                            "optional": false,
+                            "orphan": false,
+                            "dependent": false,
+                            "failed": false,
+                            "errors": 0,
+                            "warnings": 0,
+                            "id": "",
+                            "chunks": [
+                                "HtmlWebpackPlugin_0-0"
+                            ],
+                            "assets": [],
+                            "reasons": [],
+                            "usedExports": null,
+                            "providedExports": [],
+                            "optimizationBailout": [],
+                            "depth": null
+                        },
+                        {
+                            "type": "module",
+                            "moduleType": "runtime",
+                            "layer": null,
+                            "size": 345,
+                            "sizes": {
+                                "runtime": 345
+                            },
+                            "built": false,
+                            "codeGenerated": true,
+                            "buildTimeExecuted": false,
+                            "cached": false,
+                            "identifier": "webpack/runtime/require chunk loading",
+                            "name": "webpack/runtime/require chunk loading",
+                            "nameForCondition": null,
+                            "index": null,
+                            "preOrderIndex": null,
+                            "index2": null,
+                            "postOrderIndex": null,
+                            "optional": false,
+                            "orphan": false,
+                            "dependent": false,
+                            "failed": false,
+                            "errors": 0,
+                            "warnings": 0,
+                            "id": "",
+                            "chunks": [
+                                "HtmlWebpackPlugin_0-0"
+                            ],
+                            "assets": [],
+                            "reasons": [],
+                            "usedExports": null,
+                            "providedExports": [],
+                            "optimizationBailout": [],
+                            "depth": null
+                        }
+                    ],
+                    "origins": [
+                        {
+                            "module": "",
+                            "moduleIdentifier": "",
+                            "moduleName": "",
+                            "loc": "HtmlWebpackPlugin_0-0",
+                            "request": "/home/andrej/projects/Excel/node_modules/html-webpack-plugin/lib/loader.js!/home/andrej/projects/Excel/src/index.html"
+                        },
+                        {
+                            "module": "",
+                            "moduleIdentifier": "",
+                            "moduleName": "",
+                            "loc": "HtmlWebpackPlugin_0-0",
+                            "request": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;"
+                        }
+                    ]
+                }
+            ],
+            "modules": [
+                {
+                    "type": "module",
+                    "moduleType": "javascript/esm",
+                    "layer": null,
+                    "size": 77,
+                    "sizes": {
+                        "javascript": 77
+                    },
+                    "built": true,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "javascript/esm|data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                    "name": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                    "nameForCondition": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                    "index": 0,
+                    "preOrderIndex": 0,
+                    "index2": 0,
+                    "postOrderIndex": 0,
+                    "cacheable": true,
+                    "optional": false,
+                    "orphan": false,
+                    "issuer": null,
+                    "issuerName": null,
+                    "issuerPath": null,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                    "issuerId": null,
+                    "chunks": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "assets": [],
+                    "reasons": [
+                        {
+                            "moduleIdentifier": null,
+                            "module": null,
+                            "moduleName": null,
+                            "resolvedModuleIdentifier": null,
+                            "resolvedModule": null,
+                            "type": "entry",
+                            "active": true,
+                            "explanation": "",
+                            "userRequest": "data:text/javascript,__webpack_public_path__ = __webpack_base_uri__ = htmlWebpackPluginPublicPath;",
+                            "loc": "HtmlWebpackPlugin_0-0",
+                            "moduleId": null,
+                            "resolvedModuleId": null
+                        }
+                    ],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": 0
+                },
+                {
+                    "type": "module",
+                    "moduleType": "javascript/auto",
+                    "layer": null,
+                    "size": 529,
+                    "sizes": {
+                        "javascript": 529
+                    },
+                    "built": true,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "/home/andrej/projects/Excel/node_modules/html-webpack-plugin/lib/loader.js!/home/andrej/projects/Excel/src/index.html",
+                    "name": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                    "nameForCondition": "/home/andrej/projects/Excel/src/index.html",
+                    "index": 1,
+                    "preOrderIndex": 1,
+                    "index2": 1,
+                    "postOrderIndex": 1,
+                    "cacheable": true,
+                    "optional": false,
+                    "orphan": false,
+                    "issuer": null,
+                    "issuerName": null,
+                    "issuerPath": null,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                    "issuerId": null,
+                    "chunks": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "assets": [],
+                    "reasons": [
+                        {
+                            "moduleIdentifier": "/home/andrej/projects/Excel/node_modules/html-webpack-plugin/lib/loader.js!/home/andrej/projects/Excel/src/index.html",
+                            "module": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                            "moduleName": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                            "resolvedModuleIdentifier": "/home/andrej/projects/Excel/node_modules/html-webpack-plugin/lib/loader.js!/home/andrej/projects/Excel/src/index.html",
+                            "resolvedModule": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                            "type": "cjs self exports reference",
+                            "active": true,
+                            "explanation": "",
+                            "userRequest": null,
+                            "loc": "1:93-107",
+                            "moduleId": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html",
+                            "resolvedModuleId": "./node_modules/html-webpack-plugin/lib/loader.js!./src/index.html"
+                        },
+                        {
+                            "moduleIdentifier": null,
+                            "module": null,
+                            "moduleName": null,
+                            "resolvedModuleIdentifier": null,
+                            "resolvedModule": null,
+                            "type": "entry",
+                            "active": true,
+                            "explanation": "",
+                            "userRequest": "/home/andrej/projects/Excel/node_modules/html-webpack-plugin/lib/loader.js!/home/andrej/projects/Excel/src/index.html",
+                            "loc": "HtmlWebpackPlugin_0-0",
+                            "moduleId": null,
+                            "resolvedModuleId": null
+                        },
+                        {
+                            "moduleIdentifier": null,
+                            "module": null,
+                            "moduleName": null,
+                            "resolvedModuleIdentifier": null,
+                            "resolvedModule": null,
+                            "type": null,
+                            "active": true,
+                            "explanation": "used as library export",
+                            "userRequest": null,
+                            "moduleId": null,
+                            "resolvedModuleId": null
+                        }
+                    ],
+                    "usedExports": null,
+                    "providedExports": null,
+                    "optimizationBailout": [
+                        "CommonJS bailout: module.exports is used directly at 1:93-107"
+                    ],
+                    "depth": 0
+                },
+                {
+                    "type": "module",
+                    "moduleType": "runtime",
+                    "layer": null,
+                    "size": 88,
+                    "sizes": {
+                        "runtime": 88
+                    },
+                    "built": false,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "webpack/runtime/hasOwnProperty shorthand",
+                    "name": "webpack/runtime/hasOwnProperty shorthand",
+                    "nameForCondition": null,
+                    "index": null,
+                    "preOrderIndex": null,
+                    "index2": null,
+                    "postOrderIndex": null,
+                    "optional": false,
+                    "orphan": false,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "",
+                    "chunks": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "assets": [],
+                    "reasons": [],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": null
+                },
+                {
+                    "type": "module",
+                    "moduleType": "runtime",
+                    "layer": null,
+                    "size": 274,
+                    "sizes": {
+                        "runtime": 274
+                    },
+                    "built": false,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "webpack/runtime/make namespace object",
+                    "name": "webpack/runtime/make namespace object",
+                    "nameForCondition": null,
+                    "index": null,
+                    "preOrderIndex": null,
+                    "index2": null,
+                    "postOrderIndex": null,
+                    "optional": false,
+                    "orphan": false,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "",
+                    "chunks": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "assets": [],
+                    "reasons": [],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": null
+                },
+                {
+                    "type": "module",
+                    "moduleType": "runtime",
+                    "layer": null,
+                    "size": 27,
+                    "sizes": {
+                        "runtime": 27
+                    },
+                    "built": false,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "webpack/runtime/publicPath",
+                    "name": "webpack/runtime/publicPath",
+                    "nameForCondition": null,
+                    "index": null,
+                    "preOrderIndex": null,
+                    "index2": null,
+                    "postOrderIndex": null,
+                    "optional": false,
+                    "orphan": false,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "",
+                    "chunks": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "assets": [],
+                    "reasons": [],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": null
+                },
+                {
+                    "type": "module",
+                    "moduleType": "runtime",
+                    "layer": null,
+                    "size": 345,
+                    "sizes": {
+                        "runtime": 345
+                    },
+                    "built": false,
+                    "codeGenerated": true,
+                    "buildTimeExecuted": false,
+                    "cached": false,
+                    "identifier": "webpack/runtime/require chunk loading",
+                    "name": "webpack/runtime/require chunk loading",
+                    "nameForCondition": null,
+                    "index": null,
+                    "preOrderIndex": null,
+                    "index2": null,
+                    "postOrderIndex": null,
+                    "optional": false,
+                    "orphan": false,
+                    "failed": false,
+                    "errors": 0,
+                    "warnings": 0,
+                    "id": "",
+                    "chunks": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "assets": [],
+                    "reasons": [],
+                    "usedExports": null,
+                    "providedExports": [],
+                    "optimizationBailout": [],
+                    "depth": null
+                }
+            ],
+            "entrypoints": {
+                "HtmlWebpackPlugin_0-0": {
+                    "name": "HtmlWebpackPlugin_0-0",
+                    "chunks": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "assets": [],
+                    "filteredAssets": 0,
+                    "assetsSize": 0,
+                    "auxiliaryAssets": [],
+                    "filteredAuxiliaryAssets": 0,
+                    "auxiliaryAssetsSize": 0,
+                    "children": {},
+                    "childAssets": {},
+                    "isOverSizeLimit": false
+                }
+            },
+            "namedChunkGroups": {
+                "HtmlWebpackPlugin_0-0": {
+                    "name": "HtmlWebpackPlugin_0-0",
+                    "chunks": [
+                        "HtmlWebpackPlugin_0-0"
+                    ],
+                    "assets": [],
+                    "filteredAssets": 0,
+                    "assetsSize": 0,
+                    "auxiliaryAssets": [],
+                    "filteredAuxiliaryAssets": 0,
+                    "auxiliaryAssetsSize": 0,
+                    "children": {},
+                    "childAssets": {},
+                    "isOverSizeLimit": false
+                }
+            },
+            "errors": [],
+            "errorsCount": 0,
+            "warnings": [],
+            "warningsCount": 0,
+            "children": []
+        }
+    ]
+}
