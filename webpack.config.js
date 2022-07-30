@@ -4,12 +4,16 @@ const CopyPlugin = require("copy-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const isProd = process.env.NODE_ENV === "production";
+const ENV = {
+	PRODUCTION: "production",
+	DEVELOPMENT: "development",
+};
+
+const isProd = process.env.NODE_ENV === ENV.PRODUCTION;
 const isDev = !isProd;
-console.log("isDev", isDev);
 
 module.exports = {
-	mode: isDev ? "development" : "production",
+	mode: isDev ? ENV.DEVELOPMENT : ENV.PRODUCTION,
 	entry: "./src/index.js",
 	output: {
 		path: path.resolve(__dirname, "build"),
