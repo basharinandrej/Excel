@@ -6,6 +6,13 @@
     &__title
         padding: 2px 4px
         font-size: 20px
+        border: 1px solid transparent
+        transition: .3s
+
+
+    &__title:hover
+        border: 1px solid #000
+        transition: .3s
 
 
     &__wrapper
@@ -21,11 +28,16 @@
         align-items: center
         cursor: pointer
         margin-right: 4px
+        transition: .3s
 
 
     &__button:hover
-        color: #3f3e3ec4
+        background: #dfdfdfc4
         transition: .3s
+
+
+    &__button:active
+        color: red
 
 
     &__link
@@ -37,5 +49,9 @@
 
 
     &__link:hover
-        color: #3f3e3ec4
+        background: #dfdfdfc4
         transition: .3s
+
+
+    &__link:active
+        color: red
