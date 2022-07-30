@@ -4,8 +4,13 @@ const CopyPlugin = require("copy-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const isProd = process.env.NODE_ENV === "production";
+const isDev = !isProd;
+
+console.log("isProd", isProd);
+
 module.exports = {
-	mode: "development",
+	mode: isDev ? "development" : "production",
 	entry: "./src/index.js",
 	output: {
 		path: path.resolve(__dirname, "build"),
@@ -30,6 +35,7 @@ module.exports = {
 			template: "./src/index.html",
 		}),
 		new BundleAnalyzerPlugin({
+			analyzerMode: isDev ? "server" : "disabled",
 			openAnalyzer: false,
 			analyzerHost: "localhost",
 			analyzerPort: 4201,
