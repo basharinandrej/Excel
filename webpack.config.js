@@ -15,6 +15,7 @@ const isDev = !isProd;
 module.exports = {
 	mode: isDev ? ENV.DEVELOPMENT : ENV.PRODUCTION,
 	entry: "./src/index.js",
+	devtool: isDev ? "source-map" : false,
 	output: {
 		path: path.resolve(__dirname, "build"),
 		filename: "bundle.[hash].js",
