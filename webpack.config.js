@@ -14,11 +14,11 @@ const isDev = !isProd
 
 module.exports = {
     mode: isDev ? ENV.DEVELOPMENT : ENV.PRODUCTION,
-    entry: './src/index.js',
     devtool: isDev ? 'source-map' : false,
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.[hash].js',
+        filename: 'bundle.[contenthash].js',
     },
     devServer: {
         static: {
@@ -58,7 +58,7 @@ module.exports = {
             ],
         }),
         new MiniCssExtractPlugin({
-            filename: './styles/index.[hash].css',
+            filename: './styles/index.[contenthash].css',
         }),
     ],
 }
