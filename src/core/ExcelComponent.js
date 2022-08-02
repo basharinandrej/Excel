@@ -1,4 +1,4 @@
-import DomListener from '@CORE/DomLIstener'
+import DomListener from '@CORE/DomListener'
 
 class ExcelComponent extends DomListener {
     /*Вернёт HTML разметку компонента*/
