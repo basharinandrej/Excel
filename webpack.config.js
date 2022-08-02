@@ -29,6 +29,7 @@ module.exports = {
     resolve: {
         alias: {
             '@STYLES': path.resolve(__dirname, 'src/styles'),
+            '@CORE': path.resolve(__dirname, 'src/core'),
         },
     },
     module: {
