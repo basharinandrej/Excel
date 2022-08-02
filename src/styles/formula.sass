@@ -1,0 +1,32 @@
+.formula-excel
+    display: flex
+    padding: 4px 20px 4px 20px
+    border-bottom: 1px solid $color-text-4
+
+
+    &__paragraph
+        font-size: 20px
+        font-style: italic
+        position: relative
+        margin-right: 36px
+        color: $color-text-5
+
+
+    &__paragraph::after
+        content: '';
+        display: block
+        position: absolute
+        top: -1px
+        bottom: -1px
+        right: -26px
+        background: $color-background-4
+        width: 1px
+
+
+    &__input
+        border: none
+        font-size: 16px
+        outline: none
+        width: 100%
+
+

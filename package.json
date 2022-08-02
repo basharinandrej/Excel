@@ -25,6 +25,7 @@
     "webpack-hot-middleware": "^2.25.1"
   },
   "dependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "normalize.css": "^8.0.1"
   }
 }
