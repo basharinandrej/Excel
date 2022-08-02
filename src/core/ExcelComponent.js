@@ -1,4 +1,4 @@
-import { DomListener } from '@CORE/DomLIstener'
+import DomListener from '@CORE/DomLIstener'
 
 class ExcelComponent extends DomListener {
     /*Вернёт HTML разметку компонента*/
@@ -6,3 +6,5 @@ class ExcelComponent extends DomListener {
         return ''
     }
 }
+
+export default ExcelComponent
