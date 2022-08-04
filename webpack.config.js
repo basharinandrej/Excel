@@ -31,6 +31,7 @@ module.exports = {
             '@STYLES': path.resolve(__dirname, 'src/styles'),
             '@CORE': path.resolve(__dirname, 'src/core'),
             '@Components': path.resolve(__dirname, 'src/components'),
+            '@Dom': path.resolve(__dirname, 'src/dom'),
         },
     },
     module: {

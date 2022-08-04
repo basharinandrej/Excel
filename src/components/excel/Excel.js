@@ -1,36 +1,29 @@
 import ExcelComponent from '@CORE/ExcelComponent'
+import { $ } from '@Dom/index'
 
 class Excel extends ExcelComponent {
     constructor(selector, options) {
         super()
-        this.$root = document.querySelector(selector)
+        this.$root = $(selector)
         this.collectionComponents = options?.components || []
     }
 
-    _createRootWrapper() {
-        const $rootWrapper = document.createElement('div')
-        $rootWrapper.classList.add('excel')
-
-        return $rootWrapper
-    }
-
-    _appendComponentsInRoot() {
-        const $rootWrapper = this._createRootWrapper()
+    _appendComponentsInRootWrapper() {
+        const $rootWrapper = $.create('div', 'excel')
 
         this.collectionComponents.forEach((Component) => {
-            const $el = document.createElement('div')
-            $el.classList.add(...Component.classNames)
-            $el.append(new Component().getHTML())
+            const $el = $.create('div', Component.classNames)
+            $el.setHTML(new Component().getHTML())
 
-            $rootWrapper.append($el)
+            $rootWrapper.setHTML($el)
         })
 
         return $rootWrapper
     }
 
     render() {
-        const $rootWrapper = this._appendComponentsInRoot()
-        return this.$root.append($rootWrapper)
+        const $rootWrapper = this._appendComponentsInRootWrapper()
+        return this.$root.setHTML($rootWrapper)
     }
 }
 
