@@ -20,6 +20,10 @@ class Dom {
 	getHTML() {
 		return this.$el.innerHTML
 	}
+
+	on(listener, callback) {
+		this.$el.addEventListener(listener, callback)
+	}
 }
 
 export function $(selector) {
