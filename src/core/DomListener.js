@@ -1,15 +1,18 @@
 class DomListener {
-    constructor($root, listeners) {
-        this.listeners = listeners || []
+    constructor($root, options) {
         this.$root = $root
+        this.listeners = options?.listeners || []
+        this.nameComponent = options?.name 
     }
 
-    initDomListeners() {
-        console.log('this', this)
-        
+    initDomListeners() {        
         this.listeners.forEach(listener => {
             const method = getNameMethod(listener)
-            this.$root.on(listener, this[method])
+            
+            if(!this[method]) {
+                throw new Error(`Method ${method} is not implemented in <${this.nameComponent} /> component`)
+            }
+            this.$root.on(listener, this[method].bind(this))
         })
     }
 }
