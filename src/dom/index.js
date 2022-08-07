@@ -16,6 +16,10 @@ class Dom {
 		}
 		return this;
 	}
+
+	getHTML() {
+		return this.$el.innerHTML
+	}
 }
 
 export function $(selector) {

@@ -15,9 +15,9 @@ class Excel extends ExcelComponent {
             const $el = $.create('div', Component.classNames)
             $el.setHTML(new Component().getHTML())
 
-            $rootWrapper.setHTML($el)
         })
 
+        console.log($rootWrapper.getHTML())
         return $rootWrapper
     }
 
