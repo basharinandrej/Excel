@@ -13,11 +13,10 @@ class Excel extends ExcelComponent {
 
         this.collectionComponents.forEach((Component) => {
             const $el = $.create('div', Component.classNames)
-            $el.setHTML(new Component().getHTML())
+            $el.setHTML(new Component().toHTML())
+            $rootWrapper.setHTML($el)
 
         })
-
-        console.log($rootWrapper.getHTML())
         return $rootWrapper
     }
 

@@ -3,7 +3,7 @@ import ExcelComponent from '@CORE/ExcelComponent'
 class Toolbar extends ExcelComponent {
     static classNames = ['excel__toolbar-excel', 'toolbar-excel']
 
-    getHTML() {
+    toHTML() {
         return `
             <button class="toolbar-excel__button">
                     <i class="material-icons">format_align_left</i>

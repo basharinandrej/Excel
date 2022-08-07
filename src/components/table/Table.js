@@ -3,7 +3,7 @@ import ExcelComponent from '@CORE/ExcelComponent'
 class Table extends ExcelComponent {
     static classNames = ['excel__ftable-excel', 'table-excel']
 
-    getHTML() {
+    toHTML() {
         return `
             <div class="table-excel__row-info row-info">
                 <div class="row-info__cell row-info__cell--empty"></div>

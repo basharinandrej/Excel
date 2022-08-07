@@ -3,7 +3,7 @@ import ExcelComponent from '@CORE/ExcelComponent'
 class Header extends ExcelComponent {
     static classNames = ['excel__header-excel', 'header-excel']
 
-    getHTML() {
+    toHTML() {
         return `
             <input type="text" value="Новая таблица" class="header-excel__title">
 
