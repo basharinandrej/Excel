@@ -21,7 +21,7 @@ class Formula extends ExcelComponent {
 
     onInput(event) {
         console.log(this.$root)
-        console.log('onInput....', event.target.value)
+        console.log('onInput:', event.target.value)
     }
 }
 

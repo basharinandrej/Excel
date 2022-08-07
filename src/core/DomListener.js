@@ -1,3 +1,5 @@
+import {convertToUpperCaseFirstSymbol} from './utils'
+
 class DomListener {
     constructor($root, options) {
         this.$root = $root
@@ -18,13 +20,8 @@ class DomListener {
 }
 
 function getNameMethod(subName) {
-    return 'on' + toUpperCaseFirstSymbol(subName)
+    return 'on' + convertToUpperCaseFirstSymbol(subName)
 }
 
-function toUpperCaseFirstSymbol(string = '') {
-    if(typeof string !== 'string') ''
-
-    return string.charAt(0).toUpperCase() + string.slice(1)
-}
 
 export default DomListener
