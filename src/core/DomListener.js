@@ -17,6 +17,10 @@ class DomListener {
             this.$root.on(listener, this[method].bind(this))
         })
     }
+
+    removeDomListener() {
+        
+    }
 }
 
 function getNameMethod(subName) {
