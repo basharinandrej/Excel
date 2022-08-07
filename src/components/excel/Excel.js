@@ -14,9 +14,8 @@ class Excel extends ExcelComponent {
         this.collectionComponents = this.collectionComponents.map((Component) => {
             const $el = $.create('div', Component.classNames)
             const component = new Component($el)
-            $el.setHTML(component.toHTML())
+            $el.setHTML(component.toHTML());
             $rootWrapper.setHTML($el)
-
             return component
         })
         return $rootWrapper
