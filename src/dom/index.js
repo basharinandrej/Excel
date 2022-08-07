@@ -7,7 +7,11 @@ class Dom {
         if (html instanceof Dom) {
             html = html.$el
         }
-        this.$el.append(html)
+        if (typeof html === 'string') {
+            this.$el.innerHTML = html
+        } else {
+            this.$el.append(html)
+        }
         return this
     }
 }

@@ -4,7 +4,12 @@ class Formula extends ExcelComponent {
     static classNames = ['excel__formula-excel', 'formula-excel']
 
     getHTML() {
-        return 'Formula'
+        return `
+            <p class="formula-excel__paragraph">
+                fx
+            </p>
+            <input type="text" class="formula-excel__input">
+        `
     }
 }
 
