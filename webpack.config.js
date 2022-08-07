@@ -29,6 +29,9 @@ module.exports = {
     resolve: {
         alias: {
             '@STYLES': path.resolve(__dirname, 'src/styles'),
+            '@CORE': path.resolve(__dirname, 'src/core'),
+            '@Components': path.resolve(__dirname, 'src/components'),
+            '@Dom': path.resolve(__dirname, 'src/dom'),
         },
     },
     module: {
@@ -52,7 +55,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, './src/images'),
+                    from: path.resolve(__dirname, './src/assets/images'),
                     to: path.resolve(__dirname, 'build/images'),
                 },
             ],
