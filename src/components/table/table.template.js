@@ -5,7 +5,7 @@ const CODES = {
 
 const createHeadCell = (char) => `<div class="row-info__cell">${char}</div>`;
 
-const createCell = () => `<div class="row-content__cell" contenteditable></div>`
+const createCell = () => `<div class="row-content__cell" contenteditable></div>`;
 
 function toCell(_, index) {
 	const charCode = CODES.A + index;
@@ -45,7 +45,7 @@ export function createTable(rowTotal = 15) {
 	const rows = [];
 	rows.push(createHeadRow());
 
-	for (let i = 0; i <= rowTotal; i++) {
+	for (let i = 0; i < rowTotal; i++) {
 		rows.push(createRow(i));
 	}
 
