@@ -3,19 +3,9 @@ const CODES = {
 	Z: 90,
 };
 
-function createHeadCell(char) {
-	return `
-        <div class="row-info__cell">
-            ${char}
-        </div>
-    `;
-}
+const createHeadCell = (char) => `<div class="row-info__cell">${char}</div>`;
 
-function createCell() {
-	return `
-        <div class="row-content__cell" contenteditable></div>
-    `;
-}
+const createCell = () => `<div class="row-content__cell" contenteditable></div>`
 
 function toCell(_, index) {
 	const charCode = CODES.A + index;
