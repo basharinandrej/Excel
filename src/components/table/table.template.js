@@ -3,7 +3,12 @@ const CODES = {
 	Z: 90,
 };
 
-const createHeadCell = (char) => `<div class="row-info__cell">${char}</div>`;
+const createHeadCell = (char) => {
+	return `<div class="row-info__cell">
+			${char}
+			<div class="row-info__resize"></div>
+		</div>`;
+};
 
 const createCell = () => `<div class="row-content__cell" contenteditable></div>`;
 
@@ -35,13 +40,16 @@ function createRow(index) {
 	}
 	return `
         <div class="table-excel__row-content row-content">
-            <div class="row-content__cell row-content__cell--number">${index + 1}</div>
+            <div class="row-content__cell row-content__cell--number">
+				${index + 1}
+				<div class="row-content__resize"></div>
+			</div>
             ${cells.join("")}
         </div>
     `;
 }
 
-export function createTable(rowTotal = 15) {
+export function createTable(rowTotal = 45) {
 	const rows = [];
 	rows.push(createHeadRow());
 

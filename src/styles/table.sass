@@ -1,7 +1,6 @@
 .row-info
     display: flex
 
-
     &__cell
         min-width: 130px
         font-size: 16px
@@ -12,6 +11,20 @@
         background-color: $color-background-2
         margin-left: -1px
         font-weight: 300
+        position: relative
+
+    &__resize
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        width: 4px
+        background: blue
+        opacity: 0
+
+        &:hover
+            cursor: col-resize
+            opacity: 1
 
     &__cell--empty
         max-width: 64px
@@ -29,7 +42,18 @@
 .row-content
     display: flex
 
+    &__resize
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        background: blue
+        height: 4px
+        opacity: 0
 
+        &:hover
+            cursor: row-resize
+            opacity: 1
     &__cell
         min-width: 130px
         font-size: 16px
@@ -41,6 +65,7 @@
 
         
     &__cell--number
+        position: relative
         background-color: $color-background-2
         border: 1px solid $color-background-4
         max-width: 64px
