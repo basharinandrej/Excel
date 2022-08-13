@@ -20,11 +20,15 @@ window.addEventListener("DOMContentLoaded", () => {
 				const coordX = event.pageX;
 				const offsetLeft = $cellHeader.getBoundingClientRect().left;
 
+				const DEFALT_WIDTH_ROW = 70;
+				const valueWidth = coordX - offsetLeft > DEFALT_WIDTH_ROW ? coordX - offsetLeft : DEFALT_WIDTH_ROW;
+
 				/*todo дорого перебирать массив на каждое движение мыши*/
 				cellsOneColumn.forEach((cell, idx) => {
-					cell.style.minWidth = coordX - offsetLeft + "px";
+					cell.style.minWidth = valueWidth + "px";
 				});
-				$cellHeader.style.minWidth = coordX - offsetLeft + "px";
+
+				$cellHeader.style.minWidth = valueWidth + "px";
 			};
 
 			const handlerMouseUp = () => {
@@ -44,7 +48,9 @@ window.addEventListener("DOMContentLoaded", () => {
 				const coordY = event.pageY;
 				const offsetTop = $row.getBoundingClientRect().top;
 
-				$row.style.height = coordY - offsetTop + "px";
+				const DEFALT_HEIGHT_ROW = 28;
+				const valueHeight = coordY - offsetTop > DEFALT_HEIGHT_ROW ? coordY - offsetTop : DEFALT_HEIGHT_ROW;
+				$row.style.height = valueHeight + "px";
 			};
 
 			const handlerMouseUp = () => {
