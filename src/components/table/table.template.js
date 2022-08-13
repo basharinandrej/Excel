@@ -41,8 +41,9 @@ function createRow(index) {
 		const char = String.fromCharCode(i);
 		cells.push(createCell(char, i));
 	}
+
 	return `
-        <div class="table-excel__row-content row-content">
+        <div  class="table-excel__row-content row-content" data-row-id=${index + 1}>
             <div class="row-content__cell row-content__cell--number">
 				${index + 1}
 				<div class="row-content__resize"></div>

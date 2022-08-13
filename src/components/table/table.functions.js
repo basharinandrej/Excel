@@ -4,9 +4,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	$table.on("mousedown", function (event) {
 		const target = event.target;
-		const $cellHeader = target.closest("[data-coll-id]");
 
-		if ($cellHeader instanceof Element) {
+		const $cellHeader = target.closest("[data-coll-id]");
+		const $row = target.closest("[data-row-id]");
+
+		if ($cellHeader) {
+			/* resize column */
 			$cellHeader.classList.add("row-info__cell--selected");
 
 			const idCellHeader = $cellHeader.dataset.collId;
@@ -28,6 +31,26 @@ window.addEventListener("DOMContentLoaded", () => {
 				$table.off("mousemove", handlerMouseMove);
 				$table.off("mouseup", handlerMouseUp);
 				$cellHeader.classList.remove("row-info__cell--selected");
+			};
+
+			$table.on("mousemove", handlerMouseMove);
+			$table.on("mouseup", handlerMouseUp);
+		}
+		if ($row) {
+			/* resize row */
+			$row.classList.add("row-content--selected");
+
+			const handlerMouseMove = (event) => {
+				const coordY = event.pageY;
+				const offsetTop = $row.getBoundingClientRect().top;
+
+				$row.style.height = coordY - offsetTop + "px";
+			};
+
+			const handlerMouseUp = () => {
+				$table.off("mousemove", handlerMouseMove);
+				$table.off("mouseup", handlerMouseUp);
+				$row.classList.remove("row-content--selected");
 			};
 
 			$table.on("mousemove", handlerMouseMove);

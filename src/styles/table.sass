@@ -59,6 +59,25 @@
 
 .row-content
     display: flex
+    position: relative
+
+    &--selected::after
+        content: '';
+        position: absolute;
+        background: blue;
+        height: 2px;
+        right: 1px;
+        bottom: 0;
+        width: 100vh
+
+    &--selected .row-content__cell--number::before
+        content: '';
+        position: absolute;
+        background: blue;
+        height: 4px;
+        right: 0;
+        left: 0;
+        bottom: 0
 
     &__resize
         position: absolute
