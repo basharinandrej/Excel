@@ -1,21 +1,24 @@
+import "./table.functions";
 const CODES = {
 	A: 65,
 	Z: 90,
 };
 
-const createHeadCell = (char) => {
-	return `<div class="row-info__cell">
+const createHeadCell = (char, index) => {
+	return `<div class="row-info__cell" data-coll-id=${char}-${index + 1}>
 			${char}
 			<div class="row-info__resize"></div>
 		</div>`;
 };
 
-const createCell = () => `<div class="row-content__cell" contenteditable></div>`;
+const createCell = (char) => {
+	return `<div class="row-content__cell" data-cell-id=${char} contenteditable></div>`;
+};
 
 function toCell(_, index) {
 	const charCode = CODES.A + index;
 	const char = String.fromCharCode(charCode);
-	return createHeadCell(char);
+	return createHeadCell(char, index);
 }
 
 function createHeadRow() {
@@ -36,7 +39,7 @@ function createRow(index) {
 
 	for (let i = CODES.A; i <= CODES.Z; i++) {
 		const char = String.fromCharCode(i);
-		cells.push(createCell(char));
+		cells.push(createCell(char, i));
 	}
 	return `
         <div class="table-excel__row-content row-content">

@@ -12,6 +12,24 @@
         margin-left: -1px
         font-weight: 300
         position: relative
+    
+    &__cell--selected::before
+        content: '';
+        position: absolute;
+        background: blue;
+        width: 4px;
+        right: 0px;
+        top: 0;
+        bottom: 0;
+
+    &__cell--selected::after
+        content: '';
+        position: absolute;
+        background: blue;
+        width: 2px;
+        right: 1px;
+        top: 0;
+        height: 100vh
 
     &__resize
         position: absolute
@@ -71,10 +89,3 @@
         max-width: 64px
         min-width: 64px
         font-weight: 300
-
-
-
-
-
-
-
