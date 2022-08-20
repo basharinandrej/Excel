@@ -23,7 +23,9 @@ class Table extends ExcelComponent {
 		const $cellHeader = $resizer.closest("[data-coll-id]");
 		const $row = $resizer.closest("[data-row-id]");
 
-		if ($cellHeader.$el) {
+		const isResizer = $resizer.getDataSet("type") === "resizer";
+
+		if ($cellHeader.$el && isResizer) {
 			/* resize column */
 			$cellHeader.addClass("row-info__cell--selected");
 
@@ -55,7 +57,7 @@ class Table extends ExcelComponent {
 			$table.on("mouseup", handlerMouseUp);
 		}
 
-		if ($row.$el) {
+		if ($row.$el && isResizer) {
 			/* resize row */
 			$row.addClass("row-content--selected");
 
