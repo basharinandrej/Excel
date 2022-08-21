@@ -42,13 +42,12 @@ class Table extends ExcelComponent {
 				const valueWidth = delta > DEFALT_WIDTH_ROW ? delta : DEFALT_WIDTH_ROW;
 
 				$cellsOneColumn.forEach((cell) => {
-					$(cell).setStyle("minWidth", valueWidth + "px");
+					$(cell).setStyle({ minWidth: valueWidth + "px" });
 				});
 
-				$column.setStyle("minWidth", valueWidth + "px");
+				$column.setStyle({ minWidth: valueWidth + "px" });
 			};
 			$table.on("mousemove", handlerMouseMove);
-
 			$table.on("mouseup", destroyResizeColumn);
 			$table.on("mouseleave", destroyResizeColumn);
 
@@ -72,7 +71,7 @@ class Table extends ExcelComponent {
 
 				const DEFALT_HEIGHT_ROW = 28;
 				const valueHeight = delta > DEFALT_HEIGHT_ROW ? delta : DEFALT_HEIGHT_ROW;
-				$row.setStyle("height", valueHeight + "px");
+				$row.setStyle({ height: valueHeight + "px" });
 			};
 
 			$table.on("mousemove", handlerMouseMove);

@@ -56,8 +56,12 @@ class Dom {
 		this.$el.forEach(cb);
 	}
 
-	setStyle(property, value) {
-		this.$el.style[property] = value;
+	setStyle(styles = {}) {
+		for (let key in styles) {
+			if (styles.hasOwnProperty(key)) {
+				this.$el.style[key] = styles[key];
+			}
+		}
 	}
 
 	/* Getters */
