@@ -25,8 +25,8 @@ class Table extends ExcelComponent {
 
 		const isResizer = $resizer.getDataSet("type") === "resizer";
 
+		/* resize column */
 		if ($column.value && isResizer) {
-			/* resize column */
 			$column.addClass("row-info__cell--selected");
 
 			const idCellHeader = $column.getDataSet("collId");
@@ -35,17 +35,17 @@ class Table extends ExcelComponent {
 
 			const handlerMouseMove = (event) => {
 				const { left } = $column.getCoords();
-				const coordX = event.pageX - left;
+				const coordX = event.pageX;
+				const delta = coordX - left;
 
 				const DEFALT_WIDTH_ROW = 70;
-				const valueWidth = coordX > DEFALT_WIDTH_ROW ? coordX : DEFALT_WIDTH_ROW;
+				const valueWidth = delta > DEFALT_WIDTH_ROW ? delta : DEFALT_WIDTH_ROW;
 
 				$cellsOneColumn.forEach((cell) => {
 					$(cell).setStyle("minWidth", valueWidth + "px");
 				});
 
 				$column.setStyle("minWidth", valueWidth + "px");
-				console.log("coordX", coordX);
 			};
 			$table.on("mousemove", handlerMouseMove);
 
@@ -56,20 +56,22 @@ class Table extends ExcelComponent {
 				$table.off("mousemove", handlerMouseMove);
 				$table.off("mouseup", destroyResizeColumn);
 				$table.off("mouseleave", destroyResizeColumn);
+
 				$column.removeClass("row-info__cell--selected");
 			}
 		}
 
+		/* resize row */
 		if ($row.value && isResizer) {
-			/* resize row */
 			$row.addClass("row-content--selected");
 
 			const handlerMouseMove = (event) => {
 				const { top } = $row.getCoords();
-				const coordY = event.pageY - top;
+				const coordY = event.pageY;
+				const delta = coordY - top;
 
 				const DEFALT_HEIGHT_ROW = 28;
-				const valueHeight = coordY > DEFALT_HEIGHT_ROW ? coordY : DEFALT_HEIGHT_ROW;
+				const valueHeight = delta > DEFALT_HEIGHT_ROW ? delta : DEFALT_HEIGHT_ROW;
 				$row.setStyle("height", valueHeight + "px");
 			};
 
@@ -81,6 +83,7 @@ class Table extends ExcelComponent {
 				$table.off("mousemove", handlerMouseMove);
 				$table.off("mouseup", destroyResizeRow);
 				$table.off("mouseleave", destroyResizeRow);
+
 				$row.removeClass("row-content--selected");
 			}
 		}

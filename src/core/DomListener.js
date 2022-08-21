@@ -2,6 +2,7 @@ import { convertToUpperCaseFirstSymbol } from "./utils";
 
 class DomListener {
 	constructor($root, options) {
+		console.log("this", this);
 		this.$root = $root;
 		this.listeners = options?.listeners || [];
 		this.nameComponent = options?.name;
