@@ -20,21 +20,21 @@ class Table extends ExcelComponent {
 		const $resizer = $(event.target);
 		const $table = this.$root;
 
-		const $cellHeader = $resizer.closest("[data-coll-id]");
+		const $column = $resizer.closest("[data-coll-id]");
 		const $row = $resizer.closest("[data-row-id]");
 
 		const isResizer = $resizer.getDataSet("type") === "resizer";
 
-		if ($cellHeader.$el && isResizer) {
+		if ($column.value && isResizer) {
 			/* resize column */
-			$cellHeader.addClass("row-info__cell--selected");
+			$column.addClass("row-info__cell--selected");
 
-			const idCellHeader = $cellHeader.getDataSet("collId");
-			const selector = `[data-cell-id=${getFirstSymbolId(idCellHeader)}]`;
+			const idCellHeader = $column.getDataSet("collId");
+			const selector = `[data-column-name=${idCellHeader}]`;
 			const $cellsOneColumn = $table.findAll(selector);
 
 			const handlerMouseMove = (event) => {
-				const { left } = $cellHeader.getCoords();
+				const { left } = $column.getCoords();
 				const coordX = event.pageX - left;
 
 				const DEFALT_WIDTH_ROW = 70;
@@ -44,20 +44,23 @@ class Table extends ExcelComponent {
 					$(cell).setStyle("minWidth", valueWidth + "px");
 				});
 
-				$cellHeader.setStyle("minWidth", valueWidth + "px");
+				$column.setStyle("minWidth", valueWidth + "px");
+				console.log("coordX", coordX);
 			};
-
-			const handlerMouseUp = () => {
-				$table.off("mousemove", handlerMouseMove);
-				$table.off("mouseup", handlerMouseUp);
-				$cellHeader.removeClass("row-info__cell--selected");
-			};
-
 			$table.on("mousemove", handlerMouseMove);
-			$table.on("mouseup", handlerMouseUp);
+
+			$table.on("mouseup", destroyResizeColumn);
+			$table.on("mouseleave", destroyResizeColumn);
+
+			function destroyResizeColumn() {
+				$table.off("mousemove", handlerMouseMove);
+				$table.off("mouseup", destroyResizeColumn);
+				$table.off("mouseleave", destroyResizeColumn);
+				$column.removeClass("row-info__cell--selected");
+			}
 		}
 
-		if ($row.$el && isResizer) {
+		if ($row.value && isResizer) {
 			/* resize row */
 			$row.addClass("row-content--selected");
 
@@ -70,20 +73,18 @@ class Table extends ExcelComponent {
 				$row.setStyle("height", valueHeight + "px");
 			};
 
-			const handlerMouseUp = () => {
-				$table.off("mousemove", handlerMouseMove);
-				$table.off("mouseup", handlerMouseUp);
-				$row.removeClass("row-content--selected");
-			};
-
 			$table.on("mousemove", handlerMouseMove);
-			$table.on("mouseup", handlerMouseUp);
+			$table.on("mouseup", destroyResizeRow);
+			$table.on("mouseleave", destroyResizeRow);
+
+			function destroyResizeRow() {
+				$table.off("mousemove", handlerMouseMove);
+				$table.off("mouseup", destroyResizeRow);
+				$table.off("mouseleave", destroyResizeRow);
+				$row.removeClass("row-content--selected");
+			}
 		}
 	}
-}
-
-function getFirstSymbolId(id) {
-	return id.substring(0, 1);
 }
 
 export default Table;

@@ -4,15 +4,17 @@ const CODES = {
 	Z: 90,
 };
 
-const createHeadCell = (char, index) => {
-	return `<div class="row-info__cell" data-coll-id=${char}-${index + 1}>
+const createHeadCell = (char) => {
+	return `<div class="row-info__cell" data-coll-id=${char}>
 			${char}
 			<div class="row-info__resize" data-type=resizer></div>
 		</div>`;
 };
 
-const createCell = (char) => {
-	return `<div class="row-content__cell" data-cell-id=${char} contenteditable></div>`;
+const createCell = (char, index) => {
+	return `<div class="row-content__cell" data-cell-id=${char}-${
+		index + 1
+	} data-column-name=${char} contenteditable></div>`;
 };
 
 function toCell(_, index) {
@@ -39,7 +41,7 @@ function createRow(index) {
 
 	for (let i = CODES.A; i <= CODES.Z; i++) {
 		const char = String.fromCharCode(i);
-		cells.push(createCell(char, i));
+		cells.push(createCell(char, index));
 	}
 
 	return `

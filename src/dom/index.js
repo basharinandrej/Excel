@@ -59,6 +59,11 @@ class Dom {
 	setStyle(property, value) {
 		this.$el.style[property] = value;
 	}
+
+	/* Getters */
+	get value() {
+		return this.$el;
+	}
 }
 
 export function $(selector) {
