@@ -25,15 +25,15 @@ class Table extends ExcelComponent {
 
 		const isResizer = $resizer.getDataSet("type") === "resizer";
 
-		/* resize column */
-		if ($column.value && isResizer) {
-			$column.addClass("row-info__cell--selected");
+		$column.value && $column.addClass("row-info__cell--selected");
+		$row.value && $row.addClass("row-content--selected");
 
-			const idCellHeader = $column.getDataSet("collId");
-			const selector = `[data-column-name=${idCellHeader}]`;
-			const $cellsOneColumn = $table.findAll(selector);
+		const idCellHeader = $column.value && $column.getDataSet("collId");
+		const selector = `[data-column-name=${idCellHeader}]`;
+		const $cellsOneColumn = $table.findAll(selector);
 
-			const handlerMouseMove = (event) => {
+		const handlerMouseMove = (event) => {
+			if ($column.value && isResizer) {
 				const { left } = $column.getCoords();
 				const coordX = event.pageX;
 				const delta = coordX - left;
@@ -46,25 +46,7 @@ class Table extends ExcelComponent {
 				});
 
 				$column.setStyle({ minWidth: valueWidth + "px" });
-			};
-			$table.on("mousemove", handlerMouseMove);
-			$table.on("mouseup", destroyResizeColumn);
-			$table.on("mouseleave", destroyResizeColumn);
-
-			function destroyResizeColumn() {
-				$table.off("mousemove", handlerMouseMove);
-				$table.off("mouseup", destroyResizeColumn);
-				$table.off("mouseleave", destroyResizeColumn);
-
-				$column.removeClass("row-info__cell--selected");
-			}
-		}
-
-		/* resize row */
-		if ($row.value && isResizer) {
-			$row.addClass("row-content--selected");
-
-			const handlerMouseMove = (event) => {
+			} else {
 				const { top } = $row.getCoords();
 				const coordY = event.pageY;
 				const delta = coordY - top;
@@ -72,19 +54,20 @@ class Table extends ExcelComponent {
 				const DEFALT_HEIGHT_ROW = 28;
 				const valueHeight = delta > DEFALT_HEIGHT_ROW ? delta : DEFALT_HEIGHT_ROW;
 				$row.setStyle({ height: valueHeight + "px" });
-			};
-
-			$table.on("mousemove", handlerMouseMove);
-			$table.on("mouseup", destroyResizeRow);
-			$table.on("mouseleave", destroyResizeRow);
-
-			function destroyResizeRow() {
-				$table.off("mousemove", handlerMouseMove);
-				$table.off("mouseup", destroyResizeRow);
-				$table.off("mouseleave", destroyResizeRow);
-
-				$row.removeClass("row-content--selected");
 			}
+		};
+
+		$table.on("mousemove", handlerMouseMove);
+		$table.on("mouseup", destroyResizeColumn);
+		$table.on("mouseleave", destroyResizeColumn);
+
+		function destroyResizeColumn() {
+			$table.off("mousemove", handlerMouseMove);
+			$table.off("mouseup", destroyResizeColumn);
+			$table.off("mouseleave", destroyResizeColumn);
+
+			$column.value && $column.removeClass("row-info__cell--selected");
+			$row.value && $row.removeClass("row-content--selected");
 		}
 	}
 }
