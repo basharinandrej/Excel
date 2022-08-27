@@ -47,35 +47,17 @@
 .table-excel
     overflow-x: auto
 
-.table-excel__row-content
+.table-excel__row
     margin-top: -1px
 
 .table-excel__columns
     margin-top: -1px
 
-.row-content
+.row
     display: flex
     position: relative
 
-    &--selected::after
-        content: '';
-        position: absolute;
-        background: blue;
-        height: 2px;
-        right: 0;
-        bottom: 0;
-        left: 0
-
-    &--selected .row-content__cell--number::before
-        content: '';
-        position: absolute;
-        background: blue;
-        height: 4px;
-        right: 0;
-        left: 0;
-        bottom: 0
-
-    &__resize
+    &__resizer
         position: absolute
         bottom: -3px
         left: 0

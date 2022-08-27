@@ -13,7 +13,7 @@ const createHeadCell = (char) => {
 
 const createCell = (char, index) => {
 	return `<div 
-		class="row-content__cell" 
+		class="row__cell" 
 		data-cell-id=${char}-${index + 1} 
 		data-column-name=${char} data-row-name=${index + 1} 
 		contenteditable></div>`;
@@ -47,10 +47,10 @@ function createRow(index) {
 	}
 
 	return `
-        <div  class="table-excel__row-content row-content" data-row-id=${index + 1}>
-            <div class="row-content__cell row-content__cell--number">
+        <div class="table-excel__row row" data-row-id=${index + 1}>
+            <div class="row__cell row__cell--number">
 				${index + 1}
-				<div class="row-content__resize" data-type=resizer></div>
+				<div class="row__resizer" data-type=resizer></div>
 			</div>
             ${cells.join("")}
         </div>
