@@ -1,7 +1,7 @@
-.row-info
+.columns
     display: flex
 
-    &__cell
+    &__column
         min-width: 130px
         font-size: 16px
         display: flex
@@ -13,7 +13,7 @@
         font-weight: 300
         position: relative
 
-    &__resize
+    &__resizer
         position: absolute
         top: 0
         bottom: 0
@@ -38,10 +38,11 @@
 
     &__resizer--active
         opacity: 1
-
-    &__cell--empty
+        
+    &__column--empty
         max-width: 64px
         min-width: 64px
+
 
 .table-excel
     overflow-x: auto
@@ -49,7 +50,7 @@
 .table-excel__row-content
     margin-top: -1px
 
-.table-excel__row-info
+.table-excel__columns
     margin-top: -1px
 
 .row-content
@@ -100,7 +101,7 @@
 
     &__resizer--active
         opacity: 1
-        
+
         &::after
             pointer-events: auto
 

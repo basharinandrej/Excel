@@ -5,16 +5,18 @@ const CODES = {
 };
 
 const createHeadCell = (char) => {
-	return `<div class="row-info__cell" data-coll-id=${char}>
+	return `<div class="columns__column" data-coll-id=${char}>
 			${char}
-			<div class="row-info__resize" data-type=resizer></div>
+			<div class="columns__resizer" data-type=resizer></div>
 		</div>`;
 };
 
 const createCell = (char, index) => {
-	return `<div class="row-content__cell" data-cell-id=${char}-${index + 1} data-column-name=${char} data-row-name=${
-		index + 1
-	} contenteditable></div>`;
+	return `<div 
+		class="row-content__cell" 
+		data-cell-id=${char}-${index + 1} 
+		data-column-name=${char} data-row-name=${index + 1} 
+		contenteditable></div>`;
 };
 
 function toCell(_, index) {
@@ -29,8 +31,8 @@ function createHeadRow() {
 	const cells = new Array(colsTotal).fill("").map(toCell).join("");
 
 	return `
-        <div class="table-excel__row-info row-info">
-            <div class="row-info__cell row-info__cell--empty"></div>
+        <div class="table-excel__columns columns">
+            <div class="columns__column columns__column--empty"></div>
             ${cells}
         </div>
     `;

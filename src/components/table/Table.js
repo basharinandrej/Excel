@@ -33,7 +33,7 @@ class Table extends ExcelComponent {
 				const delta = coordX - left - WIDTH_RESIZER;
 
 				$resizer.setStyle({ left: delta + "px" });
-				$resizer.addClass("row-info__resizer--active");
+				$resizer.addClass("columns__resizer--active");
 
 				$table.on("mouseup", handlerMouseUp);
 			} else {
@@ -94,7 +94,7 @@ class Table extends ExcelComponent {
 			$table.off("mouseup", handlerMouseUp);
 			$table.off("mouseup", handlerMouseUpRow);
 			$table.off("mouseleave", destroyResizable);
-			$resizer.removeClass("row-info__resizer--active");
+			$resizer.removeClass("columns__resizer--active");
 			$resizer.removeClass("row-content__resizer--active");
 		}
 	}
