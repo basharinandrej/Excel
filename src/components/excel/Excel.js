@@ -11,19 +11,21 @@ class Excel extends ExcelComponent {
     _appendComponentsInRootWrapper() {
         const $rootWrapper = $.create('div', 'excel')
 
-        this.collectionComponents.forEach((Component) => {
+        this.collectionComponents = this.collectionComponents.map((Component) => {
             const $el = $.create('div', Component.classNames)
-            $el.setHTML(new Component().getHTML())
-
+            const component = new Component($el)
+            $el.setHTML(component.toHTML());
             $rootWrapper.setHTML($el)
+            return component
         })
-
         return $rootWrapper
     }
 
     render() {
         const $rootWrapper = this._appendComponentsInRootWrapper()
-        return this.$root.setHTML($rootWrapper)
+        this.$root.setHTML($rootWrapper)
+
+        this.collectionComponents.forEach(component => component.init())
     }
 }
 
