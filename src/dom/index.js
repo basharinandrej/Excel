@@ -48,6 +48,10 @@ class Dom {
 		return $(this.$el.querySelectorAll(selector));
 	}
 
+	find(selector) {
+		return $(this.$el.querySelector(selector));
+	}
+
 	getCoords() {
 		return this.$el.getBoundingClientRect();
 	}

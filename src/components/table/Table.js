@@ -25,49 +25,77 @@ class Table extends ExcelComponent {
 
 		const isResizer = $resizer.getDataSet("type") === "resizer";
 
-		$column.value && $column.addClass("row-info__cell--selected");
-		$row.value && $row.addClass("row-content--selected");
-
-		const idCellHeader = $column.value && $column.getDataSet("collId");
-		const selector = `[data-column-name=${idCellHeader}]`;
-		const $cellsOneColumn = $table.findAll(selector);
-
 		const handlerMouseMove = (event) => {
 			if ($column.value && isResizer) {
+				const WIDTH_RESIZER = 4;
 				const { left } = $column.getCoords();
 				const coordX = event.pageX;
-				const delta = coordX - left;
+				const delta = coordX - left - WIDTH_RESIZER;
 
-				const DEFALT_WIDTH_ROW = 70;
-				const valueWidth = delta > DEFALT_WIDTH_ROW ? delta : DEFALT_WIDTH_ROW;
+				$resizer.setStyle({ left: delta + "px" });
+				$resizer.addClass("row-info__resizer--active");
 
-				$cellsOneColumn.forEach((cell) => {
-					$(cell).setStyle({ minWidth: valueWidth + "px" });
-				});
-
-				$column.setStyle({ minWidth: valueWidth + "px" });
+				$table.on("mouseup", handlerMouseUp);
 			} else {
-				const { top } = $row.getCoords();
-				const coordY = event.pageY;
-				const delta = coordY - top;
+				if (isResizer) {
+					const { top } = $row.getCoords();
+					const coordY = event.pageY;
+					const delta = coordY - top;
 
-				const DEFALT_HEIGHT_ROW = 28;
-				const valueHeight = delta > DEFALT_HEIGHT_ROW ? delta : DEFALT_HEIGHT_ROW;
-				$row.setStyle({ height: valueHeight + "px" });
+					$resizer.setStyle({ top: delta + "px" });
+					$resizer.addClass("row-content__resizer--active");
+
+					$table.on("mouseup", handlerMouseUpRow);
+				}
 			}
 		};
 
 		$table.on("mousemove", handlerMouseMove);
-		$table.on("mouseup", destroyResizeColumn);
-		$table.on("mouseleave", destroyResizeColumn);
+		$table.on("mouseleave", destroyResizable);
 
-		function destroyResizeColumn() {
+		function handlerMouseUpRow(event) {
+			console.log(1);
+			const idRow = $row.getDataSet("rowId");
+			const selectorCell = `[data-row-name="${idRow}"]`;
+
+			const { top } = $row.getCoords();
+			const coordY = event.pageY;
+			const delta = coordY - top;
+
+			const $rowCell = $table.findAll(selectorCell);
+			$rowCell.forEach((cell) => {
+				$(cell).setStyle({ height: delta + "px" });
+			});
+			destroyResizable();
+		}
+
+		function handlerMouseUp(event) {
+			const idColumn = $column.getDataSet("collId");
+
+			const selectorCell = `[data-column-name=${idColumn}]`;
+			const selectorColumn = `[data-coll-id=${idColumn}]`;
+
+			const $cells = $table.findAll(selectorCell);
+			const $columnCell = $table.find(selectorColumn);
+
+			const { left } = $column.getCoords();
+			const coordX = event.pageX;
+			const delta = coordX - left;
+
+			$columnCell.setStyle({ minWidth: delta + "px" });
+			$cells.forEach((cell) => {
+				$(cell).setStyle({ minWidth: delta + "px" });
+			});
+			destroyResizable();
+		}
+
+		function destroyResizable() {
 			$table.off("mousemove", handlerMouseMove);
-			$table.off("mouseup", destroyResizeColumn);
-			$table.off("mouseleave", destroyResizeColumn);
-
-			$column.value && $column.removeClass("row-info__cell--selected");
-			$row.value && $row.removeClass("row-content--selected");
+			$table.off("mouseup", handlerMouseUp);
+			$table.off("mouseup", handlerMouseUpRow);
+			$table.off("mouseleave", destroyResizable);
+			$resizer.removeClass("row-info__resizer--active");
+			$resizer.removeClass("row-content__resizer--active");
 		}
 	}
 }

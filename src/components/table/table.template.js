@@ -12,9 +12,9 @@ const createHeadCell = (char) => {
 };
 
 const createCell = (char, index) => {
-	return `<div class="row-content__cell" data-cell-id=${char}-${
+	return `<div class="row-content__cell" data-cell-id=${char}-${index + 1} data-column-name=${char} data-row-name=${
 		index + 1
-	} data-column-name=${char} contenteditable></div>`;
+	} contenteditable></div>`;
 };
 
 function toCell(_, index) {
