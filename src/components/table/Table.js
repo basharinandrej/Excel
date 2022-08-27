@@ -29,7 +29,8 @@ class Table extends ExcelComponent {
 		const isResizer = $resizer.getDataSet("type") === "resizer";
 
 		const handlerMouseMove = (event) => {
-			if ($column.value && isResizer) {
+			if (!isResizer) return;
+			if ($column.value) {
 				const WIDTH_RESIZER = 4;
 				const { left } = $column.getCoords();
 				const coordX = event.pageX;
@@ -38,18 +39,16 @@ class Table extends ExcelComponent {
 				$resizer.setStyle({ left: Math.max(delta, MIN_WIDTH_COLUMN) + "px" });
 				$resizer.addClass("columns__resizer--active");
 
-				$table.on("mouseup", handlerMouseUp);
+				$table.on("mouseup", handlerMouseUpColumn);
 			} else {
-				if (isResizer) {
-					const { top } = $row.getCoords();
-					const coordY = event.pageY;
-					const delta = coordY - top;
+				const { top } = $row.getCoords();
+				const coordY = event.pageY;
+				const delta = coordY - top;
 
-					$resizer.setStyle({ top: Math.max(delta, MIN_HEIGHT_ROW) + "px" });
-					$resizer.addClass("row-content__resizer--active");
+				$resizer.setStyle({ top: Math.max(delta, MIN_HEIGHT_ROW) + "px" });
+				$resizer.addClass("row__resizer--active");
 
-					$table.on("mouseup", handlerMouseUpRow);
-				}
+				$table.on("mouseup", handlerMouseUpRow);
 			}
 		};
 
@@ -71,7 +70,7 @@ class Table extends ExcelComponent {
 			destroyResizable();
 		}
 
-		function handlerMouseUp(event) {
+		function handlerMouseUpColumn(event) {
 			const idColumn = $column.getDataSet("collId");
 
 			const selectorCell = `[data-column-name=${idColumn}]`;
@@ -93,11 +92,11 @@ class Table extends ExcelComponent {
 
 		function destroyResizable() {
 			$table.off("mousemove", handlerMouseMove);
-			$table.off("mouseup", handlerMouseUp);
+			$table.off("mouseup", handlerMouseUpColumn);
 			$table.off("mouseup", handlerMouseUpRow);
 			$table.off("mouseleave", destroyResizable);
 			$resizer.removeClass("columns__resizer--active");
-			$resizer.removeClass("row-content__resizer--active");
+			$resizer.removeClass("row__resizer--active");
 		}
 	}
 }
