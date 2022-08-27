@@ -18,6 +18,8 @@ class Table extends ExcelComponent {
 
 	onMousedown(event) {
 		const MIN_WIDTH_COLUMN = 70;
+		const MIN_HEIGHT_ROW = 30;
+
 		const $resizer = $(event.target);
 		const $table = this.$root;
 
@@ -43,7 +45,7 @@ class Table extends ExcelComponent {
 					const coordY = event.pageY;
 					const delta = coordY - top;
 
-					$resizer.setStyle({ top: delta + "px" });
+					$resizer.setStyle({ top: Math.max(delta, MIN_HEIGHT_ROW) + "px" });
 					$resizer.addClass("row-content__resizer--active");
 
 					$table.on("mouseup", handlerMouseUpRow);
@@ -64,7 +66,7 @@ class Table extends ExcelComponent {
 
 			const $rowCell = $table.findAll(selectorCell);
 			$rowCell.forEach((cell) => {
-				$(cell).setStyle({ height: delta + "px" });
+				$(cell).setStyle({ height: Math.max(delta, MIN_HEIGHT_ROW) + "px" });
 			});
 			destroyResizable();
 		}
